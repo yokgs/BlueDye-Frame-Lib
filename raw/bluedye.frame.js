@@ -30,15 +30,35 @@ let utilities = {
     }
     return r;
   },
-  safe: function (f) {
+  safe: function (f,e) {
     try {
       var r = f();
       return r;
     } catch (_) { }
+    return e
   }
 }
 let frame = function (arr, size) {
   this.image = utilities.resize(arr, size);
+  this.resize = function (s, e) {
+    var [hs, vs] = s,
+      [he, ve] = e;
+    var i = Array(4),
+      j = Array(4);
+    if (hs < he) { 
+      [hs, he] = [he, hs];
+    }
+  };
+  this.rotate = function () {
+    
+  };
+  this.rotateX = function () {
+    
+  };
+  this.rotateY = function () {
+    
+  };
+  return this;
 }
 let effect = function (frame, network) {
   
